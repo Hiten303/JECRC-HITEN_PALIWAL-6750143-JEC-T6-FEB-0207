@@ -1,0 +1,142 @@
+
+                                    **Python**-> 1991 Guido van Rossum
+
+
+Python is Multi paradigm language means to write their are various approach.
+
+Procedural Programming Approach
+Object Oriented Programming Approach
+Functional Programming Approach
+
+Python is Dynamically typed language,Simplcity(easy to write,easy to debug),interpetered, High level programming language(easy for huamn to understand)
+
+
+Variable -> execute in ram take space in two way first one is (variable space(stack space/name space/main space )) and other one(value space/heap space)
+(variable os a name given to memory block where the actual value is stored).
+In python first value is stored first in value space then variable
+
+                    a                           |----------> 0x56(heaxdecimal)address
+                   [ address ] -----------------                      [20]
+
+a = 30
+b = a
+a = a+b         stack                          heap
+                 a    ****r--------------------->0x21
+                [0x21] ---------         |        [30]
+                                |        |
+                b               |        |
+                [0x21]----------|---------
+                                |     
+                                |---------->0x67      
+                                            [60]
+
+MVC(Multiple variable Creation)-> It is a process of creating n numbers of variable in a single line &
+we can also assign values to it.
+->In case of MVC, no. of vraiables should be equal to no. of values.
+a,b,c,d,e=1,2,3,4,5
+>>> a,b,c,d,e=1,2,3,4,5
+>>> type((a,b,c,d,e))
+<class 'tuple'>
+
+**Identifier** -> name given to variable/class/function/module to identify it
+(we can't put any numeric value at the starting of an identifier name)
+(we can't put any space at the begining or middle of any identifier name)
+(we can't use keyword name as an identifier name)
+(we can't use any special charcters as our identifier name apart from '_')
+_ -> In python special character underscore it gives the previous executed value
+(identifier name are case sensitive)
+
+
+                                    **Library Function**
+These are type of function which is already predefined by the developers
+if we want, 
+            we can access them, we can also use them, we can't modify its functionalities
+
+Library Function ->>>
+                    1. keywords(special keywords, soft keywords)
+                    2. operators
+                    3. in-built functions
+
+
+>>> import keyword
+>>> ## var_name == kwlist
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']        
+>>> 
+
+=======False,None,True -> are special keyword(we can assign them to variables as values)========
+(we can also use them as a resultant of a condition)
+None -> is use to intialize empty value
+
+Why "keywords" are known as "Universal Standard Words"->Most of the keywords are same for multiple programming languages
+
+
+                                    ***Data Type***
+            (It is used to specify what type of data is stored inside the memory)
+type()--> it is used t identify what type of data it is.
+type(value/var_name)   ## Class name
+
+Based upon how many values we are going to store inside a single variable, we can divide the data type into two types,
+1.single value or individual
+2.mutli-value or collection
+
+
+Data type -> 
+            1. single value ->
+                                a. Numeric
+                                          (int, float, complex)
+                                b. Bool 
+                                        False,True
+                                c. NoneType
+                                        Null
+                                
+            2.Multiple value ->
+                                string
+                                ,list
+                                ,tuple
+                                ,set
+                                ,dict
+
+
+!!!!!!!!!!
+ INT->  'int' is nothing but a number which doesn't have any decimal point & fractional part.
+        Range -> -infinite to +infinite
+        Memory Allocation -> 
+        num=100                          variable/stack     value/heap
+                                              num          |-->0x56
+                                            [0x56]---------    [100]
+
+Floating-point Number -> float. It is a type of number which consists of both decimal point and fractional part.
+
+Complex-> <class 'complex'> a+- bi a,b--> real number(Int/float)
+                            i= square Root of -1
+                            bi = imaginary number
+In case of python, "i" will not reperesent imaginary number, 'j' will be used for that
+                            a +- bj   a,b -> real part ,  j--> imaginary part
+
+1 + j2 -> give nameError:
+we can't switch the position of b & j
+For defining a complex number we can't loose the value for bj.
+Only "bj" os enough to represent the complex number.
+In case of cpmplex number, we can only use "j" or "J" to reperesnt the imaginary number
+                                        
+                                      0x67
+                                     [23+9j]
+
+Bool, Boolean: <class 'bool'>
+        It is a type of simgle value or individual data type which have exactly two values.
+        One is "True" and another one is "False".
+
+        **true --> 1    **<class 'bool'> is a sub-class of <class 'int'>
+        ** false --> 0
+
+
+String, str: <class 'str'> whatever values are present inside quotes(single/double/triple) is known as string.
+
+characters, alphabets(uppercase/lowercase)
+            digits(0-9)
+            special characters
+
+my_name = 'rahul'        variable space                 value space
+                               my_name                         0x591
+                            [0x591]                            [[r][a][h][u][l]]

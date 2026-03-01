@@ -1,0 +1,9 @@
+To convert chr to assci have ord() function
+ To convert assci to chr have chr() function 
+
+
+
+                                        ** looping statment **
+
+--- while loop
+--- for loop

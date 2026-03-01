@@ -1,0 +1,151 @@
+  ** Copy operation **
+                
+                It is a process of copying the address of a value from one to another variable.
+
+                Copy operation ->>>>
+                                        1.General Copy
+                                        2.Shallow Copy
+                                        3.Deep Copy
+
+
+General Copy --->                       >>> a = 100
+                                        >>> b = a
+                                        >>> id(a)
+                                        140736149749768
+                                        >>> id(b)
+                                        140736149749768
+                                        >>> b
+                                        100
+                                        >>> a
+                                        100
+
+    variable space                                          value space
+      a              |-----------------------------------------> 0x71
+    [0x71]-----------                                            [100]
+                                                                   |
+      b                                                            |
+    [0x71]---------------------------------------------------------|
+
+    ** It is a type of copy operation in which we copy the value from one to another variable and both the variable will share the same memory location.
+
+
+==== In case of perform copy operation on Mutable collection then we have to go with shallow copy or deep copy
+
+dest_var = source_var.copy() : shallow copy
+                                                list1 = [1,2,3]
+                                                >>> list2 = list1.copy()
+                                                >>> id(list1)
+                                                2132737615552
+                                                >>> id(list2)
+                                                2132737682624
+                                                >>> 
+
+ ** I case of mutable collection, if we perform any changes then the same things will be reflectde in case of another variable.
+ SHALLOW Copy
+
+        stack          heap
+         list1        |---->0x761
+        [0x761]-------   [[1][2][3]]
+
+        list2       |----->0x662
+        [0x662]------    [[1][2][3]]
+
+        ** It is a type of copy operation,in which we copy the value from one to another
+ variable and both the variable will store different memeory location for the outer collection.
+
+ 
+ **  In case of nested mutable collection, it will create different memory block for the 
+outer one or not for the inner one.
+
+Deep Copy --> import copy
+                dest_var = copy.deepcopy(source_var)
+                                                >>> li = [1,[10,20],2]
+                                                >>> lt = li.copy()
+                                                >>> lt
+                                                [1, [10, 20], 2]
+                                                >>> li[1].pop()
+                                                20
+                                                >>> lt
+                                                [1, [10], 2]
+                                                >>> li.pop()
+                                                2
+                                                >>> lt
+                                                [1, [10], 2]
+                                                >>> li
+                                                [1, [10]]
+                                                >>> 
+
+
+
+>>> import copy
+>>> l11 = [1,2,[10,20]]
+>>> l22 = copy.deepcopy(l1)
+>>> id(l11), id(l22)
+(2132737678784, 2132737678464)
+>>> l22
+[1, 2, [10, 20]]
+>>> 
+
+
+        stack                    heap
+                      
+            l1                     0x41
+         [0x41]               [[1][2][0x89]]
+
+                                   0x89   
+                                [[10][20]]
+
+            l2                     0x49
+            [0x49]                [[1][2][0x81]]--------->0x81
+                                                        [[10][20]]
+
+
+                =========================    OPERATOR   =======================
+
+1... Arithmetic operator
+        a. addition (+)
+        b. Subtraction (-)
+        c. Multiplication (*)
+        d. Division,
+                1.True Div (/) [Floating Point Number]
+                2.Floor Div (//) [Int Number]
+                3. Modulus (%)
+        e. Exponential/Power operator(**)
+
+2... Relational operator
+        a. Equal to (==)                       [Bool value (Final Result)]
+        b. Not Equal to (!=)
+        c. Less than (<)
+        d. Greater than (>)
+        e. Less than or equal to (<=)
+        f. Greater than or equal to (>=)
+
+3... Logiacal Operator:
+        a. Logiacal and
+        b. logiacl or
+        3. logiacl not
+
+4... Assignment operator
+        a. Assignment (=)
+        b. Argumented Assignment Operator:
+                1. +=,-=,*=,/=,//=,%=
+        
+5... Bitwise Operator:
+     a. Bitwise AND (&)
+     b. Bitwise OR (|)
+     c. Bitwise NOT (~)
+     d. Bitwise XOR (^)
+     e. Bitwise Right Shift (>>)
+     f. Bitwise Left Shift (<<)
+
+6... Memenership operator
+        a.in
+        b.not in
+
+7... Identity operator   ** same memory address is present **
+        a. is
+        b. is not
+
+        Is operator will give output as True if both the values are belongs to the same memory location.otherwise, false
+
+        Is not operator will give output as True if the values are not pointing towards the same memory location.otherwise, false

@@ -1,0 +1,250 @@
+ Positive Indexing                                           Negative Indexing
+
+    si->0                                             ##Access the first value
+ei->
+
+len(coll)-1                                    name[-len(name)]
+    ei->len(coll)-1                                    name[-len(name)]
+
+
+              ==========================**list**========================
+
+    list1 = [1,2,,3,4,5]
+list1 is a homogeneous list collection
+list 2 = [1,1.2,(3.4+90.2j),True,'hello']
+
+list2 is a heterogeneous list collection
+
+List is a type of collection
+in which we can store both homogeneous and heterogeneous data items(values)
+All the values will be enclosed with in square brackets
+value will be separated by comma
+
+Empty brackets is the default value for a list collection(    []     )
+
+        >>> list1 =[1,2,3,4,5]
+        >>> type(list1)
+        <class 'list'>
+        >>> 
+
+Methods ->
+
+append()-> It is used to add a new value at the very end of an existing\list collection
+                 >>> list1.append(6)
+                >>> lsit1
+                >>> list1
+                [1, 2, 3, 4, 5, 6]
+                >>> 
+
+insert()-> Insert object before index
+                        >>> list1
+                [1, 2, 3, 4, 5, 6]
+                >>> list1.insert(3,100)
+                >>> list1
+                [1, 2, 3, 100, 4, 5, 6]
+
+                >>> ## index = 4, 3; index > len(list_coll)
+                >>> list1.insert(10,4)
+                >>> list1
+                [1, 2, 3, 100, 4, 5, 6, 4]
+                >>> 
+
+                >>> ## index value is in negative  -> add before index
+                >>> list1.insert(-1,-1)
+                >>> list1
+                [1, 2, 3, 100, 4, 5, 6, -1, 4]
+                >>> 
+
+extend()-> as pass a iterable things like list , string
+
+                >>> list1.extend([100,200,300])
+                >>> list1
+                [1, 2, 3, 100, 4, 5, 6, -1, 4, 100, 200, 300]
+
+                **list1.extend([i for i in range(100,201)])
+
+
+pop()-> pop(index=-1)
+
+                [1, 2, 3, 100, 4, 5, 6, -1, 4, 100, 200, 300]
+                >>> list1.pop() ##returns the popped out value
+                300
+
+                >>> list1.pop(2)
+                3
+
+remove() -> I known what value i should remove/ remove first occurence of value
+
+                list1.remove(100)
+                >>> list1
+                [1, 2, 4, 5, 6, -1, 4, 100, 200]
+
+my_list = [100,200.02,'HELLO',[1,2,3]]
+
+        memeory Allocation
+
+                [   [100][200.02][0x67][0x45]    ]
+
+                                                0x67[[H][E][L][L][O]]
+
+>>> my_list = [100,200.02,'HELLO',[1,2,3]]
+>>> my_list[len(my_list)-1]
+[1, 2, 3]
+ ***my_list[len(my_list)-1][len(my_list[len(my_list)-1])-1]
+
+**==[1,2,3][len([1,2,3]) - 1]
+
+my_list[3][0]
+1
+
+                                                **TUPLE**
+
+tpl1=(1,2,3) it is homogeneous tuple collection
+
+tpl2=(10,20,3,1.1) it is heterogeneous tuple collection
+
+It is a type of collection, in which we can store both same or different data items, which will be enclosed between paranthesis
+It is an immutable collection
+
+empty tuple is the default value
+
+tpl1 =(1,2,3,[10,20])           |-----------------------Meta data(size/address/type)        
+                                |
+              [[1][2][3][0x771][]]
+
+
+                                                **Set Collection or Multi-Value Data Type**
+
+                                                        >>> set1={1,2,3}
+                                                        >>> type(set1)
+                                                        <class 'set'>
+                                                        >>> ##Homogeneous Collection
+                                                        >>> set2={1,1.1,90+8j}
+                                                        >>> ## Heterogeneous
+                                                        >>> 
+
+Set is an unordered collection.No indexing concept will be applied on it.
+No duplicate values are allowed.
+It is a type of collection in which we can store unique homogeneous or heterogeneous data items
+and all the data items will be enclosed between braces and the order will not be followed
+
+set1 = {1,2,3,'HELLO'} 
+
+memeory Allocation ---------->                  value space/heap
+
+Non-linear 
+
+in set only immutable items are stored like(tuple,string)
+
+add()-> new_set.add(20)
+
+
+                                **Dictionary**
+It is type of collection in which we can store data in the form of key-value pair which is enclosed between braces
+where key - value pair will be separated by comma and key, value wiil be separated by collan.
+
+To add data -> 
+                user_info['is_logged_in']=True
+
+value space ->  user_id = '9876'
+                password = '0x89' ---------------> []
+                location = '0x78' ----------------> []
+
+
+                        d1 = {
+                        ... 1: "I am int"
+                        ... 2.4 : 'value of float'
+                        ... 0j : "complex",
+                        ... True : 1,
+                        ... }    d1[1], or d1['name']
+
+
+================================================================================================
+                      ****  Mutable Data Type  ****
+
+Let's understand why list collection is known as Mutable Data type
+
+                                my_list = [1,2,3]
+                                >>> id(my_list)
+                                2054869632576
+                                >>> my_list[0] = 20
+                                >>> my_list
+                                [20, 2, 3]
+                                >>> id(my_list)
+                                2054869632576
+
+Firstly i hav stored some value inside a memeory block,after performing modification, the memory address is remaning as it is.
+After storing a value insisde a memeory block if it possible to preform some modification inside the same memeory block and the address will be always as it is when that data
+type will be known as "Mutable data Type"
+
+variable space                 value space
+my_list                         0x68
+0x68                           [[0x99][2][3]]
+
+                                        0x99
+                                        [10]
+
+
+                        ********* immutable data type *************
+
+Let's see whether "int" is a Mutable or an immutable data type
+
+                                                >>> n1 = 250
+                                                >>> n2 = 50
+                                                >>> prev =id(n1)
+                                                >>> n1 = n1+n2
+                                                >>> n1
+                                                300
+                                                >>> n2
+                                                50
+                                                >>> prev
+                                                140736827331272
+                                                >>> id(n1)
+                                                2054869324624
+                                                >>> 
+
+        
+                            ********** Slicing **********
+
+-- Fetching or extacting a part of a collection
+-- It is supported by those data types who supports indexing concept
+
+                        var_name/coll[si : ei+-1: updation/step_value]
+
+si(starting index) --> From where should i start. (default value is 0)
+ei(ending index) --> Where should i stop?(exclusive)
+updation/step-value --> How to go to the next one ? (+1)
+
+                +1 --> Positive Index --> Left --> Right
+
+                -1 --> negative Indexing : Left <----- Right
+
+
+                                        >>> s = 'Hello Python'
+                                        >>> s[::1]
+                                        'Hello Python'
+                                        >>> s[0:4]
+                                        'Hell'
+                                        >>> s[0:5]
+                                        'Hello'
+                                        >>> s[0:5:1]
+                                        'Hello'
+
+
+                                        >> l=[1,2,3,4,5]
+                                        >>> l[-5:-3:1]
+                                        [1, 2]
+
+
+                                ****** Type Casting *******
+
+It is a process of converting one data type to another data type.
+
+we can perform type casting into two differnrnt ways,
+1.Implicit Type Casting : Automatically
+2. Explicit Type Casting : Manual
+
+
+we can convert integer into all the SVDs(single value data types) or in case of MVDs, we can convert it into string
+
+we can convert "complex" into only complex & bool in case of SVDs.Only into str, we can convert it.
