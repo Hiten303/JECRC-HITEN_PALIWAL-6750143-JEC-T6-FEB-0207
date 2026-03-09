@@ -1,0 +1,44 @@
+'''
+Encapsulation
+
+1. it is used to provide security to the data 
+
+how to provide security to the data?
+to provide security 
+access specifier :
+  it is described who can access the class members (properties) 
+  protected member is a member in which 
+
+'''
+protected access specifier 
+class Temp:
+   ## soft barrier 
+   _a=10
+
+'''
+1. by using  syntax,
+2. get and set method
+3. by using @property decorator (setter)
+
+1. by using syntax
+obj_name/class_name._CN__prop_name/__method_name(accessing)
+obj_name/class_name._CN__MemberName=new_method(modifing)
+
+3. by using @property decorator 
+class temp:
+    __a=10
+
+    @Property
+    def get (self):
+       print(self.__a)
+    @get.setter 
+    def set(self,new_val):
+       self.__a=new_val
+
+    obj =temp()
+    obj.get
+    obj.set=1000
+    obj.get
+    print(obj._temp__a)
+        
+'''   
